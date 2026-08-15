@@ -110,7 +110,7 @@ M_vals = [get_magnetization_HDR(E, params['m_eff'], params['alpha'],
 axs[0, 0].plot(E_fields, np.array(M_vals), 'b-', linewidth=2)
 axs[0, 0].set_title('Edelstein Effect: Linear Response\n$M_y$ vs $E_x$', fontsize=14)
 axs[0, 0].set_xlabel('Electric Field $E_x$ [V/m]', fontsize=12)
-axs[0, 0].set_ylabel('Magnetization $M_y$ [A/m]', fontsize=12)
+axs[0, 0].set_ylabel('Magnetization $M_y$ [Am^2/m^2]', fontsize=12)
 axs[0, 0].grid(True, alpha=0.3)
 
 # --- Plot 2: M_y vs Rashba Coupling Strength (HDR) ---
@@ -121,12 +121,12 @@ M_alphas = [get_magnetization_HDR(params['Ex'], params['m_eff'], a,
 
 axs[0, 1].plot(alphas_eVA, np.array(M_alphas), 'r-', linewidth=2)
 axs[0, 1].set_title('Dependence on SOC Strength ($\\alpha$)\nHigh Density Regime', fontsize=14)
-axs[0, 1].set_xlabel('Rashba $\\alpha$ [meV$\cdot$\AA]', fontsize=12)
-axs[0, 1].set_ylabel('Magnetization $M_y$ [A/m]', fontsize=12)
+axs[0, 1].set_xlabel('Rashba $\\alpha$ [meV$\cdot$A]', fontsize=12)
+axs[0, 1].set_ylabel('Magnetization $M_y$ [Am^2/m^2]', fontsize=12)
 axs[0, 1].grid(True, alpha=0.3)
 
 # --- Plot 3: M_y vs Fermi Energy (Transition LDR to HDR) ---
-EFs_eV = np.linspace(-0.1, 0.15, 300) # eV (spanning crossing)
+EFs_eV = np.linspace(-0.1, 0.15, 300) # eV (spanning crossing) #note: modified to start from 0.0 to avoid negative EF which can lead to a negative square root in LDR formula
 EFs_J = EFs_eV * eV_to_J
 
 M_EFs = []
@@ -151,7 +151,7 @@ axs[0, 2].plot(EFs_eV * 1000, np.array(M_EFs), 'g-', linewidth=2)
 axs[0, 2].axvline(0, color='k', linestyle='--', label='Band Crossing ($E_F=0$)')
 axs[0, 2].set_title('Dependence on Fermi Energy\nTransition LDR $\leftrightarrow$ HDR', fontsize=14)
 axs[0, 2].set_xlabel('Fermi Energy $E_F$ [meV]', fontsize=12)
-axs[0, 2].set_ylabel('Magnetization $M_y$ [A/m]', fontsize=12)
+axs[0, 2].set_ylabel('Magnetization $M_y$ [Am^2/m^2]', fontsize=12)
 axs[0, 2].legend()
 axs[0, 2].grid(True, alpha=0.3)
 
@@ -215,8 +215,8 @@ M_z = e_charge * params['tau'] * alpha_ME_zx * params['Ex']
 axs[1, 2].plot(J_vals_eVA, M_z, 'm-', linewidth=2)
 axs[1, 2].axvline(0, color='k', linestyle='--')
 axs[1, 2].set_title('Out-of-Plane Edelstein Effect\np-wave Magnet ($M_z \propto J$)', fontsize=14)
-axs[1, 2].set_xlabel('p-wave Coupling $J$ [meV$\cdot$\AA]', fontsize=12)
-axs[1, 2].set_ylabel('Magnetization $M_z$ [A/m]', fontsize=12)
+axs[1, 2].set_xlabel('p-wave Coupling $J$ [meV$\cdot$A]', fontsize=12)
+axs[1, 2].set_ylabel('Magnetization $M_z$ [Am^2/m^2]', fontsize=12)
 axs[1, 2].grid(True, alpha=0.3)
 
 print("\nSimulation Complete. Graphics generated.")
