@@ -297,7 +297,7 @@ So $\alpha^{ME} = \frac{M}{e\tau E}$.
 $[\alpha^{ME}] = \frac{[I]}{[I][T][E]} = \frac{1}{[T][E]} = [T]^{-1} [M]^{-1}[L]^{-1}[T]^3[I] = [M]^{-1}[L]^{-1}[T]^2[I]$.
 RHS calculated above: $[I][L][T]^{-1}$.
 Mismatch: $[I][L][T]^{-1}$ vs $[I][M]^{-1}[L]^{-1}[T]^2$.
-Ratio: $\frac{[I][L][T]^{-1}}{[I][M]^{-1}[L]^{-1}[T]^2]} = [M][L]^2[T]^{-3} = [E]/[L]^2 \cdot [L]^2/[T]^2 \dots$ no.
+Ratio: $\frac{[I][L][T]^{-1}}{[I][M]^{-1}[L]^{-1}[T]^2} = [M][L]^2[T]^{-3} = [E]/[L]^2 \cdot [L]^2/[T]^2 \dots$ no.
 $[M][L]^2[T]^{-2}$ is Energy. We have $[T]^{-3}$. We need one more $[T]$.
 If we multiply RHS by $\tau$ (time), we get $[I][L]$.
 The text formula for $\alpha^{ME}$ seems to be missing $\tau$ or has extra $\hbar$.
